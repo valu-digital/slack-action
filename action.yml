@@ -1,0 +1,11 @@
+name: 'Setup Slack'
+description: 'Add slack-message command'
+inputs:
+  token:
+    description: 'Slack bot auth token'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/setup-slack.sh ${{ inputs.who-to-greet }}
+      shell: bash
