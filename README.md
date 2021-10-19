@@ -21,12 +21,12 @@ Example:
 ```yaml
 - name: Build and deploy
   run: |
-	slack-message "Starting deploy"
+        slack-message "Starting deploy"
 
-	npm ci
-	npm run deploy
+        npm ci
+        npm run deploy
 
-	slack-message "App deployed"
+        slack-message "App deployed"
 ```
 
 Failure notifications
