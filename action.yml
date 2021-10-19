@@ -3,9 +3,13 @@ description: 'Add slack-message command'
 inputs:
   token:
     description: 'Slack bot auth token'
-    required: true
+  webhook:
+    description: 'Slack web hook url'
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/setup-slack.sh ${{ inputs.who-to-greet }}
+    - run: ${{ github.action_path }}/setup-slack.sh ${{ inputs.token }}
+      env:
+        SLACK_TOKEN: ${{ inputs.token }}
+        SLACK_WEBHOOK: ${{ inputs.webhook }}
       shell: bash

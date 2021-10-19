@@ -2,5 +2,5 @@
 
 set -x
 
-echo $@
+env
 echo "Slack hello"
