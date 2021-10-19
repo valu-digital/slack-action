@@ -23,6 +23,7 @@ if [ "${SLACK_WEBHOOK:-}" != "" ]; then
 		"text": "$message",
 	}
 JSON
+	exit 0
 fi
 
 
