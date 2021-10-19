@@ -1,6 +1,8 @@
 name: 'Setup Slack'
 description: 'Add slack-message command'
 inputs:
+  channel:
+    description: 'Default slack channel to use'
   token:
     description: 'Slack bot auth token'
   webhook:
@@ -8,8 +10,9 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/setup-slack.sh ${{ inputs.token }}
-      env:
-        SLACK_TOKEN: ${{ inputs.token }}
-        SLACK_WEBHOOK: ${{ inputs.webhook }}
-      shell: bash
+    - run:
+    - run:  |
+        echo "${{ github.action_path }}/bin" >> $GITHUB_PATH
+        echo SLACK_TOKEN=${{ inputs.token }} >> $GITHUB_ENV
+        echo SLACK_WEBHOOK=${{ inputs.webhook }} >> $GITHUB_ENV
+        echo SLACK_CHANNEL=${{ inputs.channel }} >> $GITHUB_ENV
