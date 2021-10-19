@@ -9,7 +9,7 @@ Usage
       token: ${{ secrets.SLACK_TOKEN }}
       # or
       #webhook: ${{ secrets.SLACK_WEBHOOK }}
-      channel: "#channel" # Channel to send the message to
+      channel: "#channel" # Channel to send the messages to
 ```
 
 This puts the `slack-message` command to the PATH in your Github Workflows and
