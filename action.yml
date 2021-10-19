@@ -10,9 +10,9 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run:
     - run:  |
         echo "${{ github.action_path }}/bin" >> $GITHUB_PATH
         echo SLACK_TOKEN=${{ inputs.token }} >> $GITHUB_ENV
         echo SLACK_WEBHOOK=${{ inputs.webhook }} >> $GITHUB_ENV
         echo SLACK_CHANNEL=${{ inputs.channel }} >> $GITHUB_ENV
+      shell: bash
